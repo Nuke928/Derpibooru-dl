@@ -1376,7 +1376,6 @@ def run_batch_mode(settings,input_file_list):
 def main():
     # Load settings
     settings = config_handler(os.path.join("config","derpibooru_dl_config.cfg"))
-    verify_api_key(settings.api_key)
     if verify_api_key(settings.api_key) == False: # Remove bad keys
         logging.warning("No API key set, weird things may happen.")
         settings.api_key = ""
