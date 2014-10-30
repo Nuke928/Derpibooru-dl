@@ -1400,7 +1400,8 @@ def main():
         # Skip everything before and including resumed tag
         logging.info("Skipping all items before the resumed tag: "+resumed_query)
         #logging.debug(str(tag_list))
-        input_file_list = input_file_list[( input_file_list.index(resumed_query) + 1 ):]
+        if resumed_query in input_file_list:
+            input_file_list = input_file_list[( input_file_list.index(resumed_query) + 1 ):]
         #logging.debug(str(input_file_list))
     # Resume range operations
     resume_range_download(settings)
